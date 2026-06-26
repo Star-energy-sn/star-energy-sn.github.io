@@ -13,10 +13,10 @@
     <link rel="icon" type="image/png" href="logo.png">
 
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://star-energy-sn.github.io/star-energy/">
+    <meta property="og:url" content="https://star-energy-sn.github.io/">
     <meta property="og:title" content="Felix Martin Birame Ndong — Directeur Commercial, STAR ENERGY">
     <meta property="og:description" content="Carte de visite digitale. Scannez le QR code pour enregistrer mon contact.">
-    <meta property="og:image" content="https://star-energy-sn.github.io/star-energy/og-image.png">
+    <meta property="og:image" content="https://star-energy-sn.github.io/og-image.png">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="675">
     <meta property="og:site_name" content="STAR ENERGY">
@@ -25,7 +25,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Felix Martin Birame Ndong — STAR ENERGY">
     <meta name="twitter:description" content="Directeur Commercial — Carte de visite digitale">
-    <meta name="twitter:image" content="https://star-energy-sn.github.io/star-energy/og-image.png">
+    <meta name="twitter:image" content="https://star-energy-sn.github.io/og-image.png">
 
     <title>Felix Martin Birame Ndong — STAR ENERGY</title>
 
@@ -106,7 +106,7 @@
         }
         @keyframes cardEnter { 0%{opacity:0;transform:translateY(40px) scale(0.96);} 100%{opacity:1;transform:translateY(0) scale(1);} }
 
-        .lang-toggle { display:flex; justify-content:flex-end; margin-bottom:6px; }
+        .lang-toggle { display:flex; justify-content:flex-end; margin-bottom:6px; position:relative; z-index:5; }
         .lang-pill { display:inline-flex; background:rgba(93,58,130,0.08); border-radius:999px; padding:4px; gap:2px; }
         .lang-btn { border:none; background:transparent; color:var(--text-soft); font-weight:600; font-size:12px; letter-spacing:.5px; padding:6px 14px; border-radius:999px; cursor:pointer; transition:all .25s ease; display:flex; align-items:center; gap:6px; }
         .lang-btn.active { background:linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%); color:white; box-shadow:0 4px 12px rgba(93,58,130,0.3); }
@@ -116,34 +116,32 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
-            padding: 14px 0 18px;
+            gap: 6px;
+            padding: 28px 0 22px;
             border-bottom: 1px dashed rgba(93, 58, 130, 0.15);
             margin-bottom: 18px;
         }
         .logo-wrap {
-            width: 130px; height: 130px;
+            width: 170px; height: 170px;
             display: flex; align-items: center; justify-content: center;
             position: relative;
         }
         .logo-wrap::before {
             content: '';
             position: absolute;
-            inset: -8px;
-            background: radial-gradient(circle, rgba(229, 75, 60, 0.18) 0%, transparent 65%);
+            inset: -6px;
+            background: radial-gradient(circle, rgba(229, 75, 60, 0.22) 0%, transparent 65%);
             animation: pulse 3.5s ease-in-out infinite;
+            z-index: 0;
         }
-        @keyframes pulse { 0%,100%{opacity:.6;transform:scale(.95);} 50%{opacity:1;transform:scale(1.05);} }
+        @keyframes pulse { 0%,100%{opacity:.5;transform:scale(.92);} 50%{opacity:.9;transform:scale(1.04);} }
         .logo-wrap img {
             width: 100%; height: auto;
             position: relative; z-index: 1;
-            filter: drop-shadow(0 8px 16px rgba(74, 45, 107, 0.3));
+            filter: drop-shadow(0 10px 18px rgba(74, 45, 107, 0.28));
             animation: float 5s ease-in-out infinite;
         }
-        @keyframes float { 0%,100%{transform:translateY(0) rotate(0);} 50%{transform:translateY(-7px) rotate(-1.5deg);} }
-        .brand { text-align: center; line-height: 1.05; }
-        .brand-star { font-size: 30px; font-weight: 900; letter-spacing: 2px; color: var(--purple-deep); display: block; }
-        .brand-energy { font-size: 14px; font-weight: 700; letter-spacing: 10px; color: var(--coral); margin-top: 3px; display: block; padding-left: 10px; }
+        @keyframes float { 0%,100%{transform:translateY(0) rotate(0);} 50%{transform:translateY(-6px) rotate(-1.5deg);} }
 
         .identity {
             text-align: center;
@@ -273,10 +271,6 @@
 
         <div class="brand-block">
             <div class="logo-wrap"><img src="logo.png" alt="STAR ENERGY"></div>
-            <div class="brand">
-                <span class="brand-star">STAR</span>
-                <span class="brand-energy">ENERGY</span>
-            </div>
         </div>
 
         <div class="identity">
