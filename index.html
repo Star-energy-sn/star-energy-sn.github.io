@@ -12,23 +12,20 @@
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="icon" type="image/png" href="logo.png">
 
-    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://benjmeth.github.io/star-energy/">
+    <meta property="og:url" content="https://star-energy-sn.github.io/star-energy/">
     <meta property="og:title" content="Felix Martin Birame Ndong — Directeur Commercial, STAR ENERGY">
-    <meta property="og:description" content="Carte de visite digitale. Enregistrez mon contact, partagez et scannez le QR code.">
-    <meta property="og:image" content="https://benjmeth.github.io/star-energy/og-image.png">
+    <meta property="og:description" content="Carte de visite digitale. Scannez le QR code pour enregistrer mon contact.">
+    <meta property="og:image" content="https://star-energy-sn.github.io/star-energy/og-image.png">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="675">
     <meta property="og:site_name" content="STAR ENERGY">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:locale:alternate" content="en_US">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Felix Martin Birame Ndong — STAR ENERGY">
     <meta name="twitter:description" content="Directeur Commercial — Carte de visite digitale">
-    <meta name="twitter:image" content="https://benjmeth.github.io/star-energy/og-image.png">
+    <meta name="twitter:image" content="https://star-energy-sn.github.io/star-energy/og-image.png">
 
     <title>Felix Martin Birame Ndong — STAR ENERGY</title>
 
@@ -62,7 +59,7 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             padding: 20px 16px 40px;
             color: var(--text);
             position: relative;
@@ -86,162 +83,76 @@
             position: fixed;
             top: 10%; right: 5%;
             width: 80px; height: 80px;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), transparent 70%);
             pointer-events: none;
             z-index: 0;
             animation: sparkle 4s ease-in-out infinite;
         }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
+        @keyframes sparkle { 0%,100%{opacity:.5;transform:scale(1);} 50%{opacity:1;transform:scale(1.2);} }
 
         .card {
             position: relative;
             z-index: 2;
             width: 100%;
-            max-width: 460px;
-            background: rgba(255, 255, 255, 0.85);
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 32px;
-            padding: 24px 24px 32px;
+            padding: 22px 24px 28px;
             box-shadow: var(--shadow);
             border: 1px solid rgba(255, 255, 255, 0.6);
             animation: cardEnter 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
+        @keyframes cardEnter { 0%{opacity:0;transform:translateY(40px) scale(0.96);} 100%{opacity:1;transform:translateY(0) scale(1);} }
 
-        @keyframes cardEnter {
-            0% { opacity: 0; transform: translateY(40px) scale(0.96); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
+        .lang-toggle { display:flex; justify-content:flex-end; margin-bottom:6px; }
+        .lang-pill { display:inline-flex; background:rgba(93,58,130,0.08); border-radius:999px; padding:4px; gap:2px; }
+        .lang-btn { border:none; background:transparent; color:var(--text-soft); font-weight:600; font-size:12px; letter-spacing:.5px; padding:6px 14px; border-radius:999px; cursor:pointer; transition:all .25s ease; display:flex; align-items:center; gap:6px; }
+        .lang-btn.active { background:linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%); color:white; box-shadow:0 4px 12px rgba(93,58,130,0.3); }
+        .flag { width:14px; height:10px; border-radius:2px; overflow:hidden; display:inline-block; box-shadow:0 1px 2px rgba(0,0,0,0.15); }
 
-        /* Language toggle */
-        .lang-toggle {
+        .brand-block {
             display: flex;
-            justify-content: flex-end;
-            margin-bottom: 4px;
-        }
-        .lang-pill {
-            display: inline-flex;
-            background: rgba(93, 58, 130, 0.08);
-            border-radius: 999px;
-            padding: 4px;
-            gap: 2px;
-        }
-        .lang-btn {
-            border: none;
-            background: transparent;
-            color: var(--text-soft);
-            font-weight: 600;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-            padding: 6px 14px;
-            border-radius: 999px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 6px;
-        }
-        .lang-btn.active {
-            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(93, 58, 130, 0.3);
-        }
-        .flag {
-            width: 14px; height: 10px;
-            border-radius: 2px;
-            overflow: hidden;
-            display: inline-block;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-        }
-
-        /* Header / logo */
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 8px 4px 20px;
+            gap: 10px;
+            padding: 14px 0 18px;
             border-bottom: 1px dashed rgba(93, 58, 130, 0.15);
-            margin-bottom: 22px;
+            margin-bottom: 18px;
         }
         .logo-wrap {
-            flex-shrink: 0;
-            width: 90px;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 130px; height: 130px;
+            display: flex; align-items: center; justify-content: center;
             position: relative;
         }
         .logo-wrap::before {
             content: '';
             position: absolute;
-            inset: -6px;
-            background: radial-gradient(circle, rgba(229, 75, 60, 0.15) 0%, transparent 65%);
+            inset: -8px;
+            background: radial-gradient(circle, rgba(229, 75, 60, 0.18) 0%, transparent 65%);
             animation: pulse 3.5s ease-in-out infinite;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; transform: scale(0.95); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
+        @keyframes pulse { 0%,100%{opacity:.6;transform:scale(.95);} 50%{opacity:1;transform:scale(1.05);} }
         .logo-wrap img {
-            width: 100%;
-            height: auto;
-            position: relative;
-            z-index: 1;
-            filter: drop-shadow(0 6px 14px rgba(74, 45, 107, 0.25));
+            width: 100%; height: auto;
+            position: relative; z-index: 1;
+            filter: drop-shadow(0 8px 16px rgba(74, 45, 107, 0.3));
             animation: float 5s ease-in-out infinite;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-6px) rotate(-1.5deg); }
-        }
-        .brand {
-            line-height: 1.05;
-        }
-        .brand-star {
-            font-size: 26px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            color: var(--purple-deep);
-            display: block;
-        }
-        .brand-energy {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 8px;
-            color: var(--coral);
-            margin-top: 2px;
-            display: block;
-        }
-        .brand-tagline {
-            font-size: 10px;
-            font-weight: 500;
-            color: var(--text-soft);
-            margin-top: 6px;
-            letter-spacing: 0.5px;
-            display: block;
-        }
+        @keyframes float { 0%,100%{transform:translateY(0) rotate(0);} 50%{transform:translateY(-7px) rotate(-1.5deg);} }
+        .brand { text-align: center; line-height: 1.05; }
+        .brand-star { font-size: 30px; font-weight: 900; letter-spacing: 2px; color: var(--purple-deep); display: block; }
+        .brand-energy { font-size: 14px; font-weight: 700; letter-spacing: 10px; color: var(--coral); margin-top: 3px; display: block; padding-left: 10px; }
 
-        /* Identity */
         .identity {
             text-align: center;
-            margin-bottom: 22px;
+            margin-bottom: 18px;
             animation: slideUp 0.8s ease-out 0.2s both;
         }
-        .name {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text);
-            letter-spacing: -0.3px;
-            line-height: 1.15;
-        }
+        .name { font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: -0.3px; line-height: 1.15; }
         .role {
-            margin-top: 6px;
+            margin-top: 8px;
             display: inline-block;
             font-size: 13px;
             font-weight: 600;
@@ -251,225 +162,74 @@
             border-radius: 999px;
             letter-spacing: 0.3px;
         }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes slideUp { from{opacity:0;transform:translateY(15px);} to{opacity:1;transform:translateY(0);} }
 
-        /* Contact list */
-        .contacts {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 22px;
-            animation: slideUp 0.8s ease-out 0.35s both;
-        }
-        .contact {
+        .address {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             padding: 12px 14px;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 16px;
             border: 1px solid rgba(93, 58, 130, 0.08);
             text-decoration: none;
             color: var(--text);
-            transition: all 0.25s ease;
-            cursor: pointer;
+            margin-bottom: 18px;
+            transition: all .25s ease;
+            animation: slideUp 0.8s ease-out 0.35s both;
         }
-        .contact:active {
-            transform: scale(0.98);
-            background: rgba(255, 255, 255, 0.95);
-        }
-        .contact:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-soft);
-            border-color: rgba(93, 58, 130, 0.2);
-        }
-        .contact-icon {
+        .address:active { transform: scale(0.98); }
+        .address:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); border-color: rgba(93,58,130,0.2); }
+        .address-icon {
             width: 38px; height: 38px;
             flex-shrink: 0;
             border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%);
+            background: linear-gradient(135deg, var(--coral) 0%, #C73E2F 100%);
             color: white;
         }
-        .contact.coral .contact-icon {
-            background: linear-gradient(135deg, var(--coral) 0%, #C73E2F 100%);
-        }
-        .contact-icon svg { width: 18px; height: 18px; }
-        .contact-body { flex: 1; min-width: 0; }
-        .contact-label {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-soft);
-            font-weight: 600;
-        }
-        .contact-value {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text);
-            margin-top: 1px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+        .address-icon svg { width: 18px; height: 18px; }
+        .address-body { flex: 1; min-width: 0; }
+        .address-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-soft); font-weight: 600; }
+        .address-value { font-size: 13px; font-weight: 600; color: var(--text); margin-top: 1px; line-height: 1.3; }
 
-        /* QR Code */
         .qr-section {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
-            padding: 18px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.6);
             border-radius: 22px;
-            margin-bottom: 22px;
+            margin-bottom: 18px;
             border: 1px solid rgba(93, 58, 130, 0.08);
             animation: slideUp 0.8s ease-out 0.5s both;
         }
-        #qrcode {
-            padding: 12px;
-            background: white;
-            border-radius: 14px;
-            box-shadow: 0 4px 20px rgba(74, 45, 107, 0.1);
-            display: flex; align-items: center; justify-content: center;
-        }
+        #qrcode { padding: 14px; background: white; border-radius: 14px; box-shadow: 0 4px 20px rgba(74, 45, 107, 0.1); display: flex; align-items: center; justify-content: center; }
         #qrcode img, #qrcode canvas { display: block; border-radius: 4px; }
-        .qr-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--purple);
-            font-weight: 700;
-            text-align: center;
-        }
-        .qr-sub {
-            font-size: 11px;
-            color: var(--text-soft);
-            text-align: center;
-            margin-top: -4px;
-        }
+        .qr-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--purple); font-weight: 700; text-align: center; }
+        .qr-sub { font-size: 11px; color: var(--text-soft); text-align: center; margin-top: -4px; }
 
-        /* Actions */
-        .actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            animation: slideUp 0.8s ease-out 0.65s both;
-        }
-        .btn {
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 15px;
-            font-weight: 700;
-            padding: 14px 18px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.25s ease;
-            position: relative;
-            overflow: hidden;
-        }
+        .actions { display: flex; flex-direction: column; gap: 10px; animation: slideUp 0.8s ease-out 0.65s both; }
+        .btn { border: none; cursor: pointer; font-family: inherit; font-size: 15px; font-weight: 700; padding: 14px 18px; border-radius: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all .25s ease; position: relative; overflow: hidden; }
         .btn:active { transform: scale(0.97); }
         .btn svg { width: 18px; height: 18px; }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%);
-            color: white;
-            box-shadow: 0 8px 20px rgba(93, 58, 130, 0.3);
-        }
-        .btn-primary:hover { box-shadow: 0 12px 28px rgba(93, 58, 130, 0.4); transform: translateY(-2px); }
-
-        .btn-coral {
-            background: linear-gradient(135deg, var(--coral) 0%, #C73E2F 100%);
-            color: white;
-            box-shadow: 0 8px 20px rgba(229, 75, 60, 0.3);
-        }
+        .btn-coral { background: linear-gradient(135deg, var(--coral) 0%, #C73E2F 100%); color: white; box-shadow: 0 8px 20px rgba(229, 75, 60, 0.3); }
         .btn-coral:hover { box-shadow: 0 12px 28px rgba(229, 75, 60, 0.4); transform: translateY(-2px); }
 
-        .btn-ghost {
-            background: rgba(93, 58, 130, 0.08);
-            color: var(--purple-deep);
-            border: 1px solid rgba(93, 58, 130, 0.15);
-        }
-        .btn-ghost:hover { background: rgba(93, 58, 130, 0.14); }
-
         /* Share sheet */
-        .share-sheet {
-            position: fixed;
-            inset: 0;
-            background: rgba(45, 27, 78, 0.5);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: none;
-            align-items: flex-end;
-            justify-content: center;
-            z-index: 100;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+        .share-sheet { position: fixed; inset: 0; background: rgba(45, 27, 78, 0.5); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: none; align-items: flex-end; justify-content: center; z-index: 100; opacity: 0; transition: opacity .3s ease; }
         .share-sheet.open { display: flex; opacity: 1; }
-        .share-panel {
-            width: 100%;
-            max-width: 460px;
-            background: white;
-            border-radius: 28px 28px 0 0;
-            padding: 20px 20px 28px;
-            transform: translateY(100%);
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
+        .share-panel { width: 100%; max-width: 460px; background: white; border-radius: 28px 28px 0 0; padding: 20px 20px 28px; transform: translateY(100%); transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .share-sheet.open .share-panel { transform: translateY(0); }
-        .share-handle {
-            width: 40px; height: 4px;
-            background: rgba(93, 58, 130, 0.2);
-            border-radius: 2px;
-            margin: 0 auto 16px;
-        }
-        .share-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text);
-            text-align: center;
-            margin-bottom: 6px;
-        }
-        .share-sub {
-            font-size: 13px;
-            color: var(--text-soft);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .share-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-        .share-opt {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px 4px;
-            border-radius: 14px;
-            transition: background 0.2s ease;
-        }
+        .share-handle { width: 40px; height: 4px; background: rgba(93, 58, 130, 0.2); border-radius: 2px; margin: 0 auto 16px; }
+        .share-title { font-size: 18px; font-weight: 700; color: var(--text); text-align: center; margin-bottom: 6px; }
+        .share-sub { font-size: 13px; color: var(--text-soft); text-align: center; margin-bottom: 20px; }
+        .share-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
+        .share-opt { display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: none; cursor: pointer; padding: 8px 4px; border-radius: 14px; transition: background .2s ease; }
         .share-opt:hover { background: rgba(93, 58, 130, 0.05); }
         .share-opt:active { transform: scale(0.95); }
-        .share-opt-icon {
-            width: 52px; height: 52px;
-            border-radius: 16px;
-            display: flex; align-items: center; justify-content: center;
-            color: white;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-        }
+        .share-opt-icon { width: 52px; height: 52px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 6px 14px rgba(0,0,0,0.12); }
         .share-opt-icon svg { width: 24px; height: 24px; }
         .share-opt-icon.wa { background: linear-gradient(135deg, #25D366, #128C7E); }
         .share-opt-icon.sms { background: linear-gradient(135deg, #34B7F1, #007AFF); }
@@ -479,215 +239,77 @@
         .share-opt-icon.fb { background: linear-gradient(135deg, #4267B2, #1877F2); }
         .share-opt-icon.tg { background: linear-gradient(135deg, #2AABEE, #229ED9); }
         .share-opt-icon.li { background: linear-gradient(135deg, #0A66C2, #004182); }
-        .share-opt-label {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text);
-        }
-        .share-close {
-            width: 100%;
-            background: rgba(93, 58, 130, 0.08);
-            border: none;
-            color: var(--purple-deep);
-            font-weight: 700;
-            font-size: 14px;
-            padding: 12px;
-            border-radius: 14px;
-            cursor: pointer;
-            margin-top: 8px;
-        }
+        .share-opt-label { font-size: 11px; font-weight: 600; color: var(--text); }
+        .share-close { width: 100%; background: rgba(93, 58, 130, 0.08); border: none; color: var(--purple-deep); font-weight: 700; font-size: 14px; padding: 12px; border-radius: 14px; cursor: pointer; margin-top: 8px; }
 
-        /* Toast */
-        .toast {
-            position: fixed;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%) translateY(80px);
-            background: var(--text);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 999px;
-            font-size: 13px;
-            font-weight: 600;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-            z-index: 200;
-            opacity: 0;
-            transition: all 0.35s ease;
-            pointer-events: none;
-        }
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
+        .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--text); color: white; padding: 12px 20px; border-radius: 999px; font-size: 13px; font-weight: 600; box-shadow: 0 8px 24px rgba(0,0,0,0.25); z-index: 200; opacity: 0; transition: all .35s ease; pointer-events: none; }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        /* Install hint */
-        .install-hint {
-            position: fixed;
-            bottom: 16px; left: 16px; right: 16px;
-            max-width: 430px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 18px;
-            padding: 12px 14px;
-            box-shadow: 0 10px 30px rgba(74, 45, 107, 0.2);
-            display: none;
-            align-items: center;
-            gap: 12px;
-            z-index: 90;
-            border: 1px solid rgba(93, 58, 130, 0.1);
-            animation: slideUp 0.4s ease;
-        }
-        .install-hint.show { display: flex; }
-        .install-hint-icon {
-            width: 36px; height: 36px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--purple), var(--purple-deep));
-            display: flex; align-items: center; justify-content: center;
-            color: white; flex-shrink: 0;
-        }
-        .install-hint-text { flex: 1; font-size: 12px; line-height: 1.35; color: var(--text); }
-        .install-hint-text strong { display: block; font-size: 13px; margin-bottom: 2px; }
-        .install-hint-close {
-            background: none; border: none;
-            color: var(--text-soft); cursor: pointer;
-            padding: 6px; font-size: 18px; line-height: 1;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 22px;
-            font-size: 10px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--text-soft);
-            opacity: 0.7;
-        }
+        .footer { text-align: center; margin-top: 18px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-soft); opacity: 0.7; }
 
         @media (max-width: 380px) {
-            .card { padding: 20px 18px 28px; }
-            .name { font-size: 21px; }
-            .brand-star { font-size: 22px; }
-            .contact { padding: 10px 12px; gap: 12px; }
-            .contact-icon { width: 34px; height: 34px; }
+            .card { padding: 18px 18px 24px; }
+            .name { font-size: 19px; }
+            .brand-star { font-size: 26px; }
+            .logo-wrap { width: 110px; height: 110px; }
             .share-opt-icon { width: 46px; height: 46px; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- Language toggle -->
         <div class="lang-toggle">
             <div class="lang-pill" role="tablist">
                 <button class="lang-btn active" data-lang="fr" role="tab" aria-selected="true">
-                    <span class="flag" aria-hidden="true">
-                        <svg width="14" height="10" viewBox="0 0 3 2"><rect width="1" height="2" x="0" fill="#002395"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ED2939"/></svg>
-                    </span>
+                    <span class="flag" aria-hidden="true"><svg width="14" height="10" viewBox="0 0 3 2"><rect width="1" height="2" x="0" fill="#002395"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ED2939"/></svg></span>
                     FR
                 </button>
                 <button class="lang-btn" data-lang="en" role="tab" aria-selected="false">
-                    <span class="flag" aria-hidden="true">
-                        <svg width="14" height="10" viewBox="0 0 60 30"><clipPath id="t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>
-                    </span>
+                    <span class="flag" aria-hidden="true"><svg width="14" height="10" viewBox="0 0 60 30"><clipPath id="t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></span>
                     EN
                 </button>
             </div>
         </div>
 
-        <!-- Header -->
-        <div class="header">
-            <div class="logo-wrap">
-                <img src="logo.png" alt="STAR ENERGY">
-            </div>
+        <div class="brand-block">
+            <div class="logo-wrap"><img src="logo.png" alt="STAR ENERGY"></div>
             <div class="brand">
                 <span class="brand-star">STAR</span>
                 <span class="brand-energy">ENERGY</span>
-                <span class="brand-tagline" data-i18n="tagline">Distribution de produits pétroliers</span>
             </div>
         </div>
 
-        <!-- Identity -->
         <div class="identity">
             <div class="name">Felix Martin Birame Ndong</div>
             <div class="role" data-i18n="role">Directeur Commercial</div>
         </div>
 
-        <!-- Contacts -->
-        <div class="contacts">
-            <a href="tel:+221338693939" class="contact">
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-                </div>
-                <div class="contact-body">
-                    <div class="contact-label" data-i18n="phone">Téléphone bureau</div>
-                    <div class="contact-value">+221 33 869 39 39</div>
-                </div>
-            </a>
-            <a href="tel:+221773335488" class="contact coral">
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-                </div>
-                <div class="contact-body">
-                    <div class="contact-label" data-i18n="mobile">Mobile</div>
-                    <div class="contact-value">+221 77 333 54 88</div>
-                </div>
-            </a>
-            <a href="mailto:felix.ndong@starenergy.sn" class="contact">
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6l9-6"/></svg>
-                </div>
-                <div class="contact-body">
-                    <div class="contact-label" data-i18n="email">Email</div>
-                    <div class="contact-value">felix.ndong@starenergy.sn</div>
-                </div>
-            </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Ameth+Diop+lot+542+Route+de+Ngor+Dakar" target="_blank" rel="noopener" class="contact coral">
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-7.5-8-13a8 8 0 0 1 16 0c0 5.5-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
-                </div>
-                <div class="contact-body">
-                    <div class="contact-label" data-i18n="address">Adresse</div>
-                    <div class="contact-value">Immeuble Ameth Diop, Route de Ngor, Dakar</div>
-                </div>
-            </a>
-            <a href="https://www.starenergy.sn" target="_blank" rel="noopener" class="contact">
-                <div class="contact-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10a15.3 15.3 0 0 1-4 10a15.3 15.3 0 0 1-4-10a15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <div class="contact-body">
-                    <div class="contact-label" data-i18n="website">Site web</div>
-                    <div class="contact-value">www.starenergy.sn</div>
-                </div>
-            </a>
-        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Ameth+Diop+lot+542+Route+de+Ngor+Dakar" target="_blank" rel="noopener" class="address">
+            <div class="address-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-7.5-8-13a8 8 0 0 1 16 0c0 5.5-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+            </div>
+            <div class="address-body">
+                <div class="address-label" data-i18n="address">Adresse</div>
+                <div class="address-value">Immeuble Ameth Diop, lot 542<br>Route de Ngor — Dakar, Sénégal</div>
+            </div>
+        </a>
 
-        <!-- QR Code -->
         <div class="qr-section">
             <div id="qrcode"></div>
-            <div class="qr-label" data-i18n="qrLabel">Scannez pour partager</div>
-            <div class="qr-sub" data-i18n="qrSub">vCard — Carte de visite digitale</div>
+            <div class="qr-label" data-i18n="qrLabel">Scannez pour mes coordonnées</div>
+            <div class="qr-sub" data-i18n="qrSub">Enregistrez le contact en un clic</div>
         </div>
 
-        <!-- Actions -->
         <div class="actions">
-            <button class="btn btn-primary" id="saveContact">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-                <span data-i18n="saveContact">Enregistrer le contact</span>
-            </button>
             <button class="btn btn-coral" id="shareBtn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
-                <span data-i18n="share">Partager</span>
-            </button>
-            <button class="btn btn-ghost" id="installBtn" style="display:none;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span data-i18n="install">Ajouter à l'écran d'accueil</span>
+                <span data-i18n="share">Partager ma carte</span>
             </button>
         </div>
 
         <div class="footer">© STAR ENERGY Sénégal</div>
     </div>
 
-    <!-- Share sheet -->
     <div class="share-sheet" id="shareSheet">
         <div class="share-panel">
             <div class="share-handle"></div>
@@ -731,75 +353,41 @@
         </div>
     </div>
 
-    <!-- Install hint (iOS) -->
-    <div class="install-hint" id="iosInstall">
-        <div class="install-hint-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 16V4"/><path d="M5 9l7-7l7 7"/><path d="M5 20h14"/></svg>
-        </div>
-        <div class="install-hint-text">
-            <strong data-i18n="iosTitle">Ajouter à l'écran d'accueil</strong>
-            <span data-i18n="iosBody">Appuyez sur Partager puis « Sur l'écran d'accueil »</span>
-        </div>
-        <button class="install-hint-close" id="closeIosHint" aria-label="Fermer">×</button>
-    </div>
-
-    <!-- Toast -->
     <div class="toast" id="toast"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
-        // ===== Translations =====
         const i18n = {
             fr: {
-                tagline: "Distribution de produits pétroliers",
                 role: "Directeur Commercial",
-                phone: "Téléphone bureau",
-                mobile: "Mobile",
-                email: "Email",
                 address: "Adresse",
-                website: "Site web",
-                qrLabel: "Scannez pour partager",
-                qrSub: "vCard — Carte de visite digitale",
-                saveContact: "Enregistrer le contact",
-                share: "Partager",
-                install: "Ajouter à l'écran d'accueil",
+                qrLabel: "Scannez pour mes coordonnées",
+                qrSub: "Enregistrez le contact en un clic",
+                share: "Partager ma carte",
                 shareTitle: "Partager ma carte",
                 shareSub: "Choisissez comment partager",
                 copyLink: "Copier lien",
                 more: "Plus",
                 close: "Fermer",
-                iosTitle: "Ajouter à l'écran d'accueil",
-                iosBody: "Appuyez sur Partager puis « Sur l'écran d'accueil »",
                 shareMsg: "Découvrez la carte de visite digitale de Felix Martin Birame Ndong, Directeur Commercial chez STAR ENERGY",
                 emailSubject: "Carte de visite — Felix Martin Birame Ndong",
                 copied: "Lien copié ✓",
-                contactSaved: "Contact téléchargé ✓",
                 pageTitle: "Felix Martin Birame Ndong — STAR ENERGY"
             },
             en: {
-                tagline: "Petroleum products distribution",
                 role: "Commercial Director",
-                phone: "Office phone",
-                mobile: "Mobile",
-                email: "Email",
                 address: "Address",
-                website: "Website",
-                qrLabel: "Scan to share",
-                qrSub: "vCard — Digital business card",
-                saveContact: "Save contact",
-                share: "Share",
-                install: "Add to Home Screen",
+                qrLabel: "Scan for my contact details",
+                qrSub: "Save the contact in one tap",
+                share: "Share my card",
                 shareTitle: "Share my card",
                 shareSub: "Choose how to share",
                 copyLink: "Copy link",
                 more: "More",
                 close: "Close",
-                iosTitle: "Add to Home Screen",
-                iosBody: "Tap Share then \"Add to Home Screen\"",
                 shareMsg: "Discover the digital business card of Felix Martin Birame Ndong, Commercial Director at STAR ENERGY",
                 emailSubject: "Business card — Felix Martin Birame Ndong",
                 copied: "Link copied ✓",
-                contactSaved: "Contact downloaded ✓",
                 pageTitle: "Felix Martin Birame Ndong — STAR ENERGY"
             }
         };
@@ -825,61 +413,36 @@
             url.searchParams.set('lang', lang);
             history.replaceState(null, '', url);
         }
-
-        // URL param overrides
         const urlLang = new URLSearchParams(window.location.search).get('lang');
         if (urlLang && i18n[urlLang]) currentLang = urlLang;
         applyLang(currentLang);
-
         document.querySelectorAll('.lang-btn').forEach(b => {
             b.addEventListener('click', () => applyLang(b.dataset.lang));
         });
 
-        // ===== QR Code =====
-        const pageURL = window.location.origin + window.location.pathname;
+        // QR code -> scan.html (avec la langue active)
+        const scanURL = new URL('scan.html', window.location.href);
+        scanURL.searchParams.set('lang', currentLang);
         new QRCode(document.getElementById("qrcode"), {
-            text: pageURL,
-            width: 160,
-            height: 160,
+            text: scanURL.toString(),
+            width: 170,
+            height: 170,
             colorDark: "#4A2D6B",
             colorLight: "#ffffff",
             correctLevel: QRCode.CorrectLevel.H
         });
-
-        // ===== vCard download =====
-        function buildVCard() {
-            return [
-                'BEGIN:VCARD',
-                'VERSION:3.0',
-                'N:Ndong;Felix Martin Birame;;;',
-                'FN:Felix Martin Birame Ndong',
-                'ORG:STAR ENERGY',
-                'TITLE:' + (currentLang === 'en' ? 'Commercial Director' : 'Directeur Commercial'),
-                'TEL;TYPE=WORK,VOICE:+221338693939',
-                'TEL;TYPE=CELL,VOICE:+221773335488',
-                'EMAIL;TYPE=WORK:felix.ndong@starenergy.sn',
-                'ADR;TYPE=WORK:;;Immeuble Ameth Diop lot 542 Route de Ngor;Dakar;;;Senegal',
-                'URL:https://www.starenergy.sn',
-                'URL;TYPE=card:' + pageURL,
-                'NOTE:' + (currentLang === 'en' ? 'Petroleum products distribution' : 'Distribution de produits petroliers'),
-                'END:VCARD'
-            ].join('\r\n');
-        }
-
-        document.getElementById('saveContact').addEventListener('click', () => {
-            const blob = new Blob([buildVCard()], { type: 'text/vcard;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Felix-Martin-Birame-Ndong.vcf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            setTimeout(() => URL.revokeObjectURL(url), 1500);
-            showToast(i18n[currentLang].contactSaved);
+        // Regénère le QR quand on change de langue
+        document.querySelectorAll('.lang-btn').forEach(b => {
+            b.addEventListener('click', () => {
+                const u = new URL('scan.html', window.location.href);
+                u.searchParams.set('lang', currentLang);
+                const qrEl = document.getElementById('qrcode');
+                qrEl.innerHTML = '';
+                new QRCode(qrEl, { text: u.toString(), width: 170, height: 170, colorDark: "#4A2D6B", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.H });
+            });
         });
 
-        // ===== Toast =====
+        // Toast
         const toast = document.getElementById('toast');
         let toastTimer;
         function showToast(msg) {
@@ -889,7 +452,7 @@
             toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
         }
 
-        // ===== Share sheet =====
+        // Share sheet
         const sheet = document.getElementById('shareSheet');
         const openSheet = () => { sheet.classList.add('open'); document.body.style.overflow = 'hidden'; };
         const closeSheet = () => { sheet.classList.remove('open'); document.body.style.overflow = ''; };
@@ -899,11 +462,7 @@
 
         function shareData() {
             const t = i18n[currentLang];
-            return {
-                msg: t.shareMsg,
-                subject: t.emailSubject,
-                url: pageURL
-            };
+            return { msg: t.shareMsg, subject: t.emailSubject, url: window.location.origin + window.location.pathname };
         }
 
         document.querySelectorAll('.share-opt').forEach(b => {
@@ -911,79 +470,26 @@
                 const { msg, subject, url } = shareData();
                 const action = b.dataset.share;
                 const fullText = msg + ' — ' + url;
-                if (action === 'whatsapp') {
-                    window.open('https://wa.me/?text=' + encodeURIComponent(fullText), '_blank');
-                } else if (action === 'sms') {
-                    window.location.href = 'sms:?&body=' + encodeURIComponent(fullText);
-                } else if (action === 'email') {
-                    window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(msg + '\n\n' + url);
-                } else if (action === 'telegram') {
-                    window.open('https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(msg), '_blank');
-                } else if (action === 'facebook') {
-                    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
-                } else if (action === 'linkedin') {
-                    window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url), '_blank');
-                } else if (action === 'copy') {
-                    try {
-                        await navigator.clipboard.writeText(url);
-                        showToast(i18n[currentLang].copied);
-                    } catch {
-                        const ta = document.createElement('textarea');
-                        ta.value = url; document.body.appendChild(ta);
-                        ta.select(); document.execCommand('copy');
-                        document.body.removeChild(ta);
+                if (action === 'whatsapp') { window.open('https://wa.me/?text=' + encodeURIComponent(fullText), '_blank'); }
+                else if (action === 'sms') { window.location.href = 'sms:?&body=' + encodeURIComponent(fullText); }
+                else if (action === 'email') { window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(msg + '\n\n' + url); }
+                else if (action === 'telegram') { window.open('https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(msg), '_blank'); }
+                else if (action === 'facebook') { window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank'); }
+                else if (action === 'linkedin') { window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url), '_blank'); }
+                else if (action === 'copy') {
+                    try { await navigator.clipboard.writeText(url); showToast(i18n[currentLang].copied); }
+                    catch {
+                        const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta);
+                        ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
                         showToast(i18n[currentLang].copied);
                     }
                 } else if (action === 'native') {
-                    if (navigator.share) {
-                        try { await navigator.share({ title: 'STAR ENERGY', text: msg, url }); }
-                        catch {}
-                    } else {
-                        showToast(currentLang === 'fr' ? 'Partage non disponible' : 'Share not available');
-                    }
+                    if (navigator.share) { try { await navigator.share({ title: 'STAR ENERGY', text: msg, url }); } catch {} }
+                    else { showToast(currentLang === 'fr' ? 'Partage non disponible' : 'Share not available'); }
                 }
                 closeSheet();
             });
         });
-
-        // ===== Install (PWA) =====
-        let deferredPrompt = null;
-        const installBtn = document.getElementById('installBtn');
-        const iosHint = document.getElementById('iosInstall');
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installBtn.style.display = 'flex';
-        });
-
-        installBtn.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') installBtn.style.display = 'none';
-                deferredPrompt = null;
-            } else {
-                // iOS fallback
-                iosHint.classList.add('show');
-            }
-        });
-
-        document.getElementById('closeIosHint').addEventListener('click', () => {
-            iosHint.classList.remove('show');
-        });
-
-        // iOS Safari detection — show install hint button
-        const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream;
-        const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-        if (isIOS && !isStandalone) {
-            installBtn.style.display = 'flex';
-        }
-
-        // ===== Open share sheet via URL param =====
-        if (new URLSearchParams(window.location.search).get('share') === '1') {
-            setTimeout(openSheet, 400);
-        }
     </script>
 </body>
 </html>
