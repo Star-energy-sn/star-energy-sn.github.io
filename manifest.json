@@ -1,0 +1,25 @@
+{
+  "name": "Felix Martin Birame Ndong - STAR ENERGY",
+  "short_name": "Felix - STAR ENERGY",
+  "description": "Carte de visite digitale - Directeur Commercial STAR ENERGY",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F7E8",
+  "theme_color": "#5D3A82",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
