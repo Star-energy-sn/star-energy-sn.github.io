@@ -132,7 +132,7 @@
 
         .identity { text-align:center; margin-bottom:20px; animation:slideUp 0.8s ease-out 0.2s both; }
         .name { font-size:20px; font-weight:800; color:var(--text); letter-spacing:-0.3px; line-height:1.15; }
-        .role { margin-top:5px; display:inline-block; font-size:12px; font-weight:600; color:var(--purple); background:linear-gradient(135deg, rgba(93,58,130,0.08) 0%, rgba(229,75,60,0.08) 100%); padding:5px 12px; border-radius:999px; letter-spacing:0.3px; }
+        .role { margin-top:10px; display:inline-block; font-size:15px; font-weight:700; color:var(--purple); background:linear-gradient(135deg, rgba(93,58,130,0.12) 0%, rgba(229,75,60,0.12) 100%); padding:8px 18px; border-radius:999px; letter-spacing:0.4px; }
         @keyframes slideUp { from{opacity:0;transform:translateY(15px);} to{opacity:1;transform:translateY(0);} }
 
         .contacts { display:flex; flex-direction:column; gap:10px; margin-bottom:20px; animation:slideUp 0.8s ease-out 0.35s both; }
@@ -269,13 +269,13 @@
                     <div class="contact-value">felix.ndong@staroilsenegal.com</div>
                 </div>
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Ameth+Diop+lot+542+Route+de+Ngor+Dakar" target="_blank" rel="noopener" class="contact coral address-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=14.70989%2C-17.467166" target="_blank" rel="noopener" class="contact coral address-row">
                 <div class="contact-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-7.5-8-13a8 8 0 0 1 16 0c0 5.5-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
                 </div>
                 <div class="contact-body">
                     <div class="contact-label" data-i18n="address">Adresse</div>
-                    <div class="contact-value">Immeuble Ameth Diop, lot 542, Route de Ngor, Dakar</div>
+                    <div class="contact-value">Cité Keur Gorgui, Lot N° 503, Dakar</div>
                 </div>
             </a>
         </div>
@@ -444,7 +444,8 @@
                 'TEL;TYPE=WORK,VOICE:+221338693939',
                 'TEL;TYPE=CELL,VOICE:+221773335488',
                 'EMAIL;TYPE=WORK:felix.ndong@staroilsenegal.com',
-                'ADR;TYPE=WORK:;;Immeuble Ameth Diop lot 542 Route de Ngor;Dakar;;;Senegal',
+                'ADR;TYPE=WORK:;;Cite Keur Gorgui Lot N 503;Dakar;;;Senegal',
+                'GEO:14.70989,-17.467166',
                 'NOTE:' + (currentLang === 'en' ? 'Petroleum products distribution' : 'Distribution de produits petroliers'),
                 'END:VCARD'
             ].join('\r\n');
