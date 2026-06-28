@@ -32,9 +32,17 @@
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         html, body { color-scheme: light only; -webkit-color-scheme: light; forced-color-adjust: none; }
+        /* Override agressif Samsung Internet / Chrome auto-dark / etc. */
         @media (prefers-color-scheme: dark) {
-            /* Verrouillage explicite en cas d'override systeme */
-            html, body { background-color: #F4F7E8; color: #2D1B4E; }
+            html { background-color: #F4F7E8 !important; }
+            body { background-color: #F4F7E8 !important; color: #2D1B4E !important; }
+            .card { background-color: #FFFFFF !important; color: #2D1B4E !important; }
+            .topbar, .contact, .qr-section, .btn-ghost, .share-panel, .install-hint { background-color: #FFFFFF !important; color: #2D1B4E !important; }
+            .name, .contact-value, .share-title, .install-hint-text { color: #2D1B4E !important; }
+            .role, .qr-label, .lang-btn.active { color: #FFFFFF !important; }
+            .contact-label, .qr-sub, .share-sub, .footer, .lang-btn { color: #5A4373 !important; }
+            .btn-primary, .btn-coral { color: #FFFFFF !important; }
+            .btn-ghost { color: #4A2D6B !important; }
         }
 
         :root {
@@ -57,7 +65,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
-            background:
+            background-color: #F4F7E8;
+            background-image:
                 radial-gradient(ellipse at top left, #DCEAB8 0%, transparent 55%),
                 radial-gradient(ellipse at bottom right, #E8D5F0 0%, transparent 55%),
                 linear-gradient(135deg, #F4F7E8 0%, #FAF8F2 50%, #F0E8F5 100%);
