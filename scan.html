@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Felix - STAR ENERGY">
     <meta name="theme-color" content="#5D3A82">
+    <meta name="color-scheme" content="light only">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="icon" type="image/png" href="logo.png">
@@ -29,6 +30,12 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        html, body { color-scheme: light only; -webkit-color-scheme: light; forced-color-adjust: none; }
+        @media (prefers-color-scheme: dark) {
+            /* Verrouillage explicite en cas d'override systeme */
+            html, body { background-color: #F4F7E8; color: #2D1B4E; }
+        }
 
         :root {
             --purple-deep: #4A2D6B;
