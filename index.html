@@ -94,42 +94,45 @@
             position: relative;
             z-index: 2;
             width: 100%;
-            max-width: 410px;
+            max-width: 440px;
             background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-radius: 28px;
-            padding: 14px 18px 18px;
+            border-radius: 30px;
+            padding: 18px 22px 22px;
             box-shadow: var(--shadow);
             border: 1px solid rgba(255, 255, 255, 0.6);
             animation: cardEnter 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         @keyframes cardEnter { 0%{opacity:0;transform:translateY(40px) scale(0.96);} 100%{opacity:1;transform:translateY(0) scale(1);} }
 
-        .lang-toggle { display:flex; justify-content:flex-end; margin-bottom:6px; position:relative; z-index:5; }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed rgba(93, 58, 130, 0.15);
+        }
+
+        .lang-toggle { display:flex; justify-content:flex-end; position:relative; z-index:5; }
         .lang-pill { display:inline-flex; background:rgba(93,58,130,0.08); border-radius:999px; padding:4px; gap:2px; }
         .lang-btn { border:none; background:transparent; color:var(--text-soft); font-weight:600; font-size:12px; letter-spacing:.5px; padding:6px 14px; border-radius:999px; cursor:pointer; transition:all .25s ease; display:flex; align-items:center; gap:6px; }
         .lang-btn.active { background:linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%); color:white; box-shadow:0 4px 12px rgba(93,58,130,0.3); }
         .flag { width:14px; height:10px; border-radius:2px; overflow:hidden; display:inline-block; box-shadow:0 1px 2px rgba(0,0,0,0.15); }
 
-        .brand-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            padding: 18px 0 12px;
-            border-bottom: 1px dashed rgba(93, 58, 130, 0.15);
-            margin-bottom: 12px;
-        }
         .logo-wrap {
-            width: 120px; height: 120px;
+            width: 95px; height: 95px;
             display: flex; align-items: center; justify-content: center;
             position: relative;
+            flex-shrink: 0;
+            margin-top: -6px;
         }
         .logo-wrap::before {
             content: '';
             position: absolute;
-            inset: -6px;
+            inset: -4px;
             background: radial-gradient(circle, rgba(229, 75, 60, 0.22) 0%, transparent 65%);
             animation: pulse 3.5s ease-in-out infinite;
             z-index: 0;
@@ -138,10 +141,10 @@
         .logo-wrap img {
             width: 100%; height: auto;
             position: relative; z-index: 1;
-            filter: drop-shadow(0 10px 18px rgba(74, 45, 107, 0.28));
+            filter: drop-shadow(0 8px 14px rgba(74, 45, 107, 0.28));
             animation: float 5s ease-in-out infinite;
         }
-        @keyframes float { 0%,100%{transform:translateY(0) rotate(0);} 50%{transform:translateY(-6px) rotate(-1.5deg);} }
+        @keyframes float { 0%,100%{transform:translateY(0) rotate(0);} 50%{transform:translateY(-4px) rotate(-1deg);} }
 
         .identity {
             text-align: center;
@@ -246,39 +249,44 @@
         .footer { text-align: center; margin-top: 12px; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-soft); opacity: 0.7; }
 
         @media (max-height: 760px) {
-            .logo-wrap { width: 100px; height: 100px; }
-            .brand-block { padding: 12px 0 8px; margin-bottom: 10px; }
+            .logo-wrap { width: 80px; height: 80px; }
+            .topbar { margin-bottom: 12px; padding-bottom: 12px; }
             .identity { margin-bottom: 10px; }
             .address { margin-bottom: 10px; }
             .qr-section { margin-bottom: 10px; padding: 10px; }
             .name { font-size: 19px; }
-            .card { padding: 12px 16px 14px; }
+            .card { padding: 14px 18px 16px; }
         }
         @media (max-width: 380px) {
-            .card { padding: 12px 14px 16px; }
+            body { padding: 8px; }
+            .card { padding: 14px 16px 16px; }
             .name { font-size: 18px; }
-            .logo-wrap { width: 95px; height: 95px; }
+            .logo-wrap { width: 78px; height: 78px; }
             .share-opt-icon { width: 46px; height: 46px; }
+        }
+        @media (max-width: 340px) {
+            .logo-wrap { width: 70px; height: 70px; }
+            .name { font-size: 17px; }
+            .lang-btn { font-size: 11px; padding: 5px 10px; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="lang-toggle">
-            <div class="lang-pill" role="tablist">
-                <button class="lang-btn active" data-lang="fr" role="tab" aria-selected="true">
-                    <span class="flag" aria-hidden="true"><svg width="14" height="10" viewBox="0 0 3 2"><rect width="1" height="2" x="0" fill="#002395"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ED2939"/></svg></span>
-                    FR
-                </button>
-                <button class="lang-btn" data-lang="en" role="tab" aria-selected="false">
-                    <span class="flag" aria-hidden="true"><svg width="14" height="10" viewBox="0 0 60 30"><clipPath id="t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></span>
-                    EN
-                </button>
-            </div>
-        </div>
-
-        <div class="brand-block">
+        <div class="topbar">
             <div class="logo-wrap"><img src="logo.png" alt="STAR ENERGY"></div>
+            <div class="lang-toggle">
+                <div class="lang-pill" role="tablist">
+                    <button class="lang-btn active" data-lang="fr" role="tab" aria-selected="true">
+                        <span class="flag" aria-hidden="true"><svg width="14" height="10" viewBox="0 0 3 2"><rect width="1" height="2" x="0" fill="#002395"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ED2939"/></svg></span>
+                        FR
+                    </button>
+                    <button class="lang-btn" data-lang="en" role="tab" aria-selected="false">
+                        <span class="flag" aria-hidden="true"><svg width="14" height="10" viewBox="0 0 60 30"><clipPath id="t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg></span>
+                        EN
+                    </button>
+                </div>
+            </div>
         </div>
 
         <div class="identity">
@@ -464,7 +472,10 @@
 
         function shareData() {
             const t = i18n[currentLang];
-            return { msg: t.shareMsg, subject: t.emailSubject, url: window.location.origin + window.location.pathname };
+            // On partage scan.html pour que le destinataire voie directement les coordonnees
+            const scanShareURL = new URL('scan.html', window.location.href);
+            scanShareURL.searchParams.set('lang', currentLang);
+            return { msg: t.shareMsg, subject: t.emailSubject, url: scanShareURL.toString() };
         }
 
         document.querySelectorAll('.share-opt').forEach(b => {
